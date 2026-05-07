@@ -67,6 +67,33 @@ export default function Navbar() {
 
       </nav>
 
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="bg-slate-950/95 border-t border-white/10 px-4 py-4 lg:hidden">
+
+          <div className="flex flex-col gap-3 text-white">
+
+            <Link href="/">
+              Home
+            </Link>
+
+            <Link href="/info">
+              Info Wisata
+            </Link>
+
+            <Link href="/reservation">
+              Reservasi
+            </Link>
+
+            <Link href="/contact">
+              Hubungi Kami
+            </Link>
+
+          </div>
+
+        </div>
+      )}
+
     </header>
   );
 }
