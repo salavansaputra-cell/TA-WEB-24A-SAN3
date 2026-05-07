@@ -28,24 +28,31 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-slate-300">
 
               <li>
-                <Link href="/">
-                  Home
-                </Link>
+                <Link href="/">Home</Link>
               </li>
 
               <li>
-                <Link href="/reservation">
-                  Reservasi
-                </Link>
+                <Link href="/reservation">Reservasi</Link>
               </li>
 
               <li>
-                <Link href="/info">
-                  Info Wisata
-                </Link>
+                <Link href="/info">Info Wisata</Link>
               </li>
 
             </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h2 className="text-lg font-semibold text-white">
+              Contact
+            </h2>
+
+            <div className="mt-4 space-y-3 text-sm text-slate-300">
+              <p>Location: Pesawaran, Lampung</p>
+              <p>Email: info@kyokkobeach.com</p>
+              <p>Phone: +62 812 3456 7890</p>
+            </div>
           </div>
 
         </div>
