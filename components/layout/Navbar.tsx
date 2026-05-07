@@ -39,6 +39,14 @@ export default function Navbar() {
 
         </div>
 
+        {/* Login */}
+        <Link
+          href="/admin/login"
+          className="hidden rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white lg:inline-flex"
+        >
+          Login
+        </Link>
+
       </nav>
     </header>
   );
