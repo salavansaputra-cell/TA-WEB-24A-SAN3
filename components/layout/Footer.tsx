@@ -28,15 +28,21 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-slate-300">
 
               <li>
-                <Link href="/">Home</Link>
+                <Link href="/" className="transition hover:text-white">
+                  Home
+                </Link>
               </li>
 
               <li>
-                <Link href="/reservation">Reservasi</Link>
+                <Link href="/reservation" className="transition hover:text-white">
+                  Reservasi
+                </Link>
               </li>
 
               <li>
-                <Link href="/info">Info Wisata</Link>
+                <Link href="/info" className="transition hover:text-white">
+                  Info Wisata
+                </Link>
               </li>
 
             </ul>
