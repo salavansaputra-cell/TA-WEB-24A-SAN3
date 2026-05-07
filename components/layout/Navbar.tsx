@@ -1,15 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full transition-shadow duration-300">
 
-      <nav className="container mx-auto flex items-center justify-between px-4 py-4">
+      <nav
+        className={`container mx-auto flex items-center justify-between px-4 py-4 transition-all duration-300 ${
+          isScrolled
+            ? "bg-slate-950/95 shadow-xl backdrop-blur"
+            : "bg-transparent"
+        }`}
+      >
 
         {/* Logo */}
         <div className="flex items-center gap-3 text-white">
@@ -25,19 +44,31 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden items-center gap-8 lg:flex">
 
-          <Link href="/" className="text-sm font-medium text-slate-200">
+          <Link
+            href="/"
+            className="text-sm font-medium text-slate-200"
+          >
             Home
           </Link>
 
-          <Link href="/info" className="text-sm font-medium text-slate-200">
+          <Link
+            href="/info"
+            className="text-sm font-medium text-slate-200"
+          >
             Info Wisata
           </Link>
 
-          <Link href="/reservation" className="text-sm font-medium text-slate-200">
+          <Link
+            href="/reservation"
+            className="text-sm font-medium text-slate-200"
+          >
             Reservasi
           </Link>
 
-          <Link href="/contact" className="text-sm font-medium text-slate-200">
+          <Link
+            href="/contact"
+            className="text-sm font-medium text-slate-200"
+          >
             Hubungi Kami
           </Link>
 
@@ -73,9 +104,7 @@ export default function Navbar() {
 
           <div className="flex flex-col gap-3 text-white">
 
-            <Link href="/">
-              Home
-            </Link>
+            <Link href="/">Home</Link>
 
             <Link href="/info">
               Info Wisata
