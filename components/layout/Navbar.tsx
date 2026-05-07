@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full">
+
       <nav className="container mx-auto flex items-center justify-between px-4 py-4">
 
         {/* Logo */}
@@ -18,7 +22,7 @@ export default function Navbar() {
           </span>
         </div>
 
-        {/* Menu Desktop */}
+        {/* Desktop Menu */}
         <div className="hidden items-center gap-8 lg:flex">
 
           <Link href="/" className="text-sm font-medium text-slate-200">
@@ -39,15 +43,30 @@ export default function Navbar() {
 
         </div>
 
-        {/* Login */}
-        <Link
-          href="/admin/login"
-          className="hidden rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white lg:inline-flex"
-        >
-          Login
-        </Link>
+        {/* Right Side */}
+        <div className="flex items-center gap-3">
+
+          {/* Login */}
+          <Link
+            href="/admin/login"
+            className="hidden rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white lg:inline-flex"
+          >
+            Login
+          </Link>
+
+          {/* Hamburger */}
+          <button
+            type="button"
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white lg:hidden"
+          >
+            ☰
+          </button>
+
+        </div>
 
       </nav>
+
     </header>
   );
 }
