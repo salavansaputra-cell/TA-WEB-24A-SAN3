@@ -1,0 +1,1 @@
+import GallerySection from "../../components/info/GallerySection";
